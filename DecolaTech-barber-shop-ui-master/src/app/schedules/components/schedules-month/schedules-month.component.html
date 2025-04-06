@@ -1,0 +1,79 @@
+<div class="container">
+    <h2>Agendamentos</h2>
+    <div class="navigation">
+      <a href="/clients/list">Clientes</a>
+      <a href="/schedules/month" class="active">Agendar</a>
+    </div>
+  
+    <div class="week-navigation">
+      <button (click)="mudarSemana(-1)">Semana Anterior</button>
+      <span>{{ getWeekRange() }}</span>
+      <button (click)="mudarSemana(1)">Próxima Semana</button>
+    </div>
+  
+    <div class="calendar">
+      <h3>Calendário Semanal</h3>
+      <div class="calendar-grid">
+        <div class="day" *ngFor="let dia of diasDaSemana">
+          <div class="day-header" (click)="selecionarDia(dia)">
+            {{ dia.dataCompleta }}
+          </div>
+          <ul class="appointments">
+            <li *ngFor="let agendamento of dia.agendamentos">
+              <span>
+                {{ agendamento.cliente && agendamento.cliente.nome ? agendamento.cliente.nome : 'Desconhecido' }}
+                -
+                {{ agendamento.dataHora ? agendamento.dataHora : 'Sem horário' }}
+              </span>
+              <button *ngIf="agendamento.id" (click)="deletarAgendamento(agendamento.id)">Deletar</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Popup para criar novo agendamento -->
+    <div class="popup" *ngIf="showSchedulePopup && selectedDay">
+      <div class="popup-content">
+        <h3>Agendar - Dia {{ selectedDay.dia ? selectedDay.dia : 'N/A' }}</h3>
+        <form (ngSubmit)="criarAgendamento()">
+          <label>Cliente</label>
+          <select [(ngModel)]="novoAgendamento.clienteId" name="cliente" required>
+            <option value="">Selecione um cliente</option>
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">
+              {{ cliente.nome ? cliente.nome : 'Sem nome' }}
+            </option>
+          </select>
+          <label>Horário</label>
+          <div class="time-slots">
+            <button
+              type="button"
+              *ngFor="let horario of getHorariosDisponiveis()"
+              (click)="novoAgendamento.hora = horario">
+              {{ horario }}
+            </button>
+          </div>
+          <button type="submit">Agendar</button>
+          <button type="button" (click)="closePopup()">Fechar</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Popup para visualizar agendamentos -->
+    <div class="popup" *ngIf="showViewPopup && selectedDay">
+      <div class="popup-content">
+        <h3>Agendamentos do Dia {{ selectedDay.dia ? selectedDay.dia : 'N/A' }}</h3>
+        <ul>
+          <li *ngFor="let agendamento of selectedDay.agendamentos">
+            <span>
+              {{ agendamento.cliente && agendamento.cliente.nome ? agendamento.cliente.nome : 'Desconhecido' }}
+              -
+              {{ agendamento.dataHora ? agendamento.dataHora : 'Sem horário' }}
+            </span>
+            <button *ngIf="agendamento.id" (click)="deletarAgendamento(agendamento.id)">Deletar</button>
+          </li>
+        </ul>
+        <button (click)="closePopup()">Fechar</button>
+      </div>
+    </div>
+  </div>

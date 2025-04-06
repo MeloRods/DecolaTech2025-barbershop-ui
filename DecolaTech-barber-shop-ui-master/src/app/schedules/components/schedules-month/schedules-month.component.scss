@@ -1,0 +1,145 @@
+.container {
+  width: 90%;
+  margin: auto;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #4A90E2;
+}
+
+.navigation a {
+  color: #A0A0A0;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.navigation a.active {
+  color: white;
+}
+
+.week-navigation {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.week-navigation button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.week-navigation span {
+  font-size: 20px;
+}
+
+.calendar-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  background-color: #444;
+  width: 14%;
+  padding: 10px;
+  margin: 1px;
+}
+
+.day-header {
+  background-color: #4A90E2;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.appointments {
+  list-style: none;
+  padding: 0;
+}
+
+.appointments li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #555;
+}
+
+.appointments button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #444;
+  padding: 20px;
+  width: 300px;
+  color: white;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content label {
+  margin: 10px 0 5px;
+}
+
+.popup-content select {
+  padding: 5px;
+  background-color: #555;
+  color: white;
+  border: 1px solid #666;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time-slots button {
+  background-color: #666;
+  color: white;
+  border: 1px solid #777;
+  padding: 5px;
+  margin: 5px;
+}
+
+.popup-content button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-content li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #555;
+}

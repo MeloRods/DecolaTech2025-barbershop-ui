@@ -1,0 +1,16 @@
+<h2>Atualizar Cliente</h2>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nome">Nome:</label>
+    <input id="nome" [(ngModel)]="cliente.nome" name="nome" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="cliente.email" name="email" type="email" required>
+  </div>
+  <div>
+    <label for="telefone">Telefone:</label>
+    <input id="telefone" [(ngModel)]="cliente.telefone" name="telefone" required>
+  </div>
+  <button type="submit">Salvar</button>
+</form>

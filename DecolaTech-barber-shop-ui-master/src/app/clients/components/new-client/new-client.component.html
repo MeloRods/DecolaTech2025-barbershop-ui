@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Cadastrar Cliente</h2>
+    <div class="navigation">
+      <a href="/clients/new-client" class="active">Clientes</a>
+      <a href="/schedules/month">Agendar</a>
+    </div>
+  
+    <form (ngSubmit)="onSubmit()">
+      <label>Nome</label>
+      <input [(ngModel)]="cliente.nome" name="nome" required>
+      <label>Email</label>
+      <input [(ngModel)]="cliente.email" name="email" type="email" required>
+      <label>Telefone</label>
+      <input [(ngModel)]="cliente.telefone" name="telefone" required>
+      <button type="submit">Salvar</button>
+    </form>
+  
+    <div class="popup" *ngIf="showPopup">
+      <div class="popup-content">
+        <h3>{{ popupMessage }}</h3>
+        <button (click)="closePopup()">Fechar</button>
+      </div>
+    </div>
+  </div>

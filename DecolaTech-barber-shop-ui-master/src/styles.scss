@@ -1,0 +1,36 @@
+:root {
+    // Cores (Dark Mode)
+    --primary: #4A90E2; // Azul claro para destacar elementos principais
+    --secondary: #81C4FF; // Azul mais claro para hover e detalhes
+    --background: #1C2526; // Fundo escuro (quase preto, com tom azulado)
+    --text-primary: #E0E0E0; // Texto claro para legibilidade
+    --text-secondary: #A0A0A0; // Texto secundário mais claro
+    --success: #27AE60; // Verde para botões de "salvar"
+    --danger: #E74C3C; // Vermelho para botões de "deletar"
+    --white: #FFFFFF;
+    --dark-surface: #2E3A3B; // Superfície para cards e formulários
+    --border: #444; // Bordas sutis
+  
+    // Tipografia
+    --font-family: 'Roboto', Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 24px;
+    --font-size-medium: 20px;
+  
+    // Espaçamentos
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+  
+    // Sombras
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  // Estilo global
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background);
+    color: var(--text-primary);
+  }

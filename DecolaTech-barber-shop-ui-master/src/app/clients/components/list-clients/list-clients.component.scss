@@ -1,0 +1,12 @@
+.client-list {
+    .clients-table {
+      background-color: var(--dark-surface);
+      th {
+        background-color: var(--primary);
+      }
+      td {
+        border-bottom: 1px solid var(--border);
+        color: var(--text-primary);
+      }
+    }
+  }
